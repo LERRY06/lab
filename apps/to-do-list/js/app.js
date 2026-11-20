@@ -77,6 +77,7 @@ default: A=String(a.done); B=String(b.done);
 return sortDir==='asc' ? A.localeCompare(B) : B.localeCompare(A);
 
 });
+
 }
 
 /* COUNTS (FIXED) */
@@ -123,30 +124,43 @@ tr.classList.add(`row-${rowClass}`);
 
 if(t.done) tr.classList.add('done');
 
+
 tr.innerHTML = `
-<td><input type="checkbox" ${t.done?'checked':''}></td>
-<td>${t.text}</td>
-<td>
-  <span class="badge ${
-    t.priority === 'High' ? 'badge-danger' :
-    t.priority === 'Medium' ? 'badge-warning' :
-    t.priority === 'Low' ? 'badge-success' :
-    'badge-secondary'
-  }">
-    ${t.priority || 'None'}
-  </span>
+<td data-label="Done">
+    <input type="checkbox" ${t.done?'checked':''}>
 </td>
-<td>${t.date}</td>
-<td>
-  <span class="badge ${t.done ? 'badge-success' : 'badge-secondary'}">
-    ${t.done ? 'Completed' : 'Active'}
-  </span>
+
+<td data-label="Task" class="task-name">
+    ${t.text}
 </td>
-<td>
-<i class="fas fa-edit text-primary mr-2"></i>
-<i class="fas fa-trash text-danger"></i>
+
+<td data-label="Priority">
+    <span class="badge ${
+        t.priority === 'High' ? 'badge-danger' :
+        t.priority === 'Medium' ? 'badge-warning' :
+        t.priority === 'Low' ? 'badge-success' :
+        'badge-secondary'
+    }">
+        ${t.priority || 'None'}
+    </span>
+</td>
+
+<td data-label="Due Date">
+    ${t.date || '-'}
+</td>
+
+<td data-label="Status">
+    <span class="badge ${t.done ? 'badge-success' : 'badge-secondary'}">
+        ${t.done ? 'Completed' : 'Active'}
+    </span>
+</td>
+
+<td data-label="Actions" class="task-actions">
+    <i class="fas fa-edit text-primary mr-3"></i>
+    <i class="fas fa-trash text-danger"></i>
 </td>
 `;
+
 
 /* DONE */
 tr.querySelector('input').onchange = () => {
@@ -271,6 +285,53 @@ document.querySelectorAll('.sortable').forEach(th => {
 		render();
     };
 });
+
+
+/* MOBILE SORT */
+
+let mobileSortDir = 'asc';
+
+$('#mobileSort').on('change', function(){
+
+    sortField = $(this).val();
+
+    if (!sortField) {
+        return;
+    }
+
+    sortDir = 'asc';
+    mobileSortDir = 'asc';
+
+    $('#mobileSortDir').html(
+        '<i class="fas fa-arrow-up"></i>'
+    );
+
+    currentPage = 1;
+    updateSortIcons();
+    render();
+
+});
+
+$('#mobileSortDir').on('click', function(){
+
+    if (!sortField) return;
+
+    mobileSortDir = mobileSortDir === 'asc' ? 'desc' : 'asc';
+
+    sortDir = mobileSortDir;
+
+    $(this).html(
+        sortDir === 'asc'
+        ? '<i class="fas fa-arrow-up"></i>'
+        : '<i class="fas fa-arrow-down"></i>'
+    );
+
+    currentPage = 1;
+    updateSortIcons();
+    render();
+
+});
+
 
 /* DARK MODE */
 $('#darkToggle').click(()=>{
@@ -471,4 +532,4 @@ function bindTitleEdit() {
 
 // initial bind
 bindTitleEdit();
-updateSortIcons();
+//updateSortIcons();

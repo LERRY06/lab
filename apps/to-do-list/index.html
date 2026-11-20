@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>To Do List</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -57,6 +58,22 @@
             Overdue (<span id="c-overdue">0</span>)
         </button>
     </div>
+
+    <!-- MOBILE SORT -->
+<div class="mobile-sort">
+    <select id="mobileSort" class="form-control form-control-sm">
+        <option value="">Sort by...</option>
+        <option value="done">Done</option>
+        <option value="text">Task</option>
+        <option value="priority">Priority</option>
+        <option value="date">Due Date</option>
+        <option value="status">Status</option>
+    </select>
+
+    <button id="mobileSortDir" class="btn btn-outline-secondary btn-sm">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</div>
 
     <!-- DARK MODE -->
     <button class="btn btn-dark btn-sm" id="darkToggle">

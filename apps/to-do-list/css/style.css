@@ -3,6 +3,11 @@ body {
     transition:0.3s;
 }
 
+.card {
+    border-radius: 16px;
+    margin-bottom: 24px;
+}
+
 /* DARK MODE */
 body.dark {
     background:#121212;
@@ -87,4 +92,317 @@ button:disabled {
   border: 1px dashed #007bff;
   padding: 2px 6px;
   border-radius: 4px;
+}
+
+
+/* =================================
+   RESPONSIVE TO DO LIST
+================================= */
+
+/* General */
+.card {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.table {
+    vertical-align: middle;
+}
+
+.task-actions i {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 991.98px) {
+
+    .container {
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 767.98px) {
+
+    body {
+        background: #f1f3f5;
+    }
+
+    .container {
+        margin-top: 15px !important;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .card {
+        border-radius: 16px;
+        margin-bottom: 15px;
+    }
+
+    .card-header {
+        padding: 16px;
+    }
+
+    .card-title {
+        font-size: 21px;
+    }
+
+    .card-body {
+        padding: 12px;
+    }
+
+    /* SEARCH */
+
+    #searchInput {
+        height: 38px;
+        font-size: 14px;
+    }
+
+    .card-body > .d-flex {
+        gap: 12px;
+    }
+
+    .input-group {
+        max-width: 100% !important;
+        width: 100%;
+    }
+
+    /* FILTER BUTTONS */
+
+    .btn-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        gap: 6px;
+    }
+
+    .btn-group .btn {
+        border-radius: 6px !important;
+        margin: 0;
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+
+    #darkToggle {
+        width: 100%;
+        padding: 8px;
+    }
+
+    /* TABLE TO CARDS */
+
+    .table {
+        display: block;
+        width: 100%;
+        border: 0;
+    }
+
+    .table thead {
+        display: none;
+    }
+
+    .table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .table tbody tr {
+        display: block;
+        margin-bottom: 12px;
+        border: 1px solid #dee2e6;
+        border-radius: 12px;
+        overflow: hidden;
+        padding: 8px 12px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    .table tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 9px 4px;
+        border: 0;
+        border-bottom: 1px solid rgba(0,0,0,0.07);
+        text-align: right;
+        font-size: 13px;
+        min-height: 38px;
+    }
+
+    .table tbody td:last-child {
+        border-bottom: 0;
+    }
+
+    .table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #6c757d;
+        text-align: left;
+        margin-right: 12px;
+    }
+
+    .table tbody td.task-name {
+        font-weight: 600;
+        font-size: 15px;
+        overflow-wrap: anywhere;
+    }
+
+    .table tbody td.task-actions {
+        justify-content: flex-end;
+        gap: 18px;
+    }
+
+    .task-actions i {
+        font-size: 19px;
+        padding: 5px;
+    }
+
+    /* EMPTY TABLE MESSAGE */
+
+    .table tbody td[colspan] {
+        display: block;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .table tbody td[colspan]::before {
+        content: none;
+    }
+
+    /* FOOTER / PAGINATION */
+
+    .card-footer {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    #addBtn {
+        width: 100%;
+        padding: 11px;
+    }
+
+    .card-footer > .d-flex {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .card-footer .btn {
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+
+    #pageNumbers {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3px;
+    }
+
+    #pageNumbers button {
+        margin: 0;
+    }
+
+    /* MODALS */
+
+    .modal-dialog {
+        margin: 10px;
+        max-width: none;
+    }
+
+    .modal-content {
+        border-radius: 14px;
+    }
+
+    .modal-body {
+        padding: 18px;
+    }
+
+    .modal-footer .btn {
+        flex: 1;
+    }
+
+    /* DARK MODE */
+
+    body.dark {
+        background: #121212;
+    }
+
+    body.dark .table tbody tr {
+        border-color: #444;
+    }
+
+    body.dark .table tbody td {
+        border-color: rgba(255,255,255,0.1);
+    }
+
+    body.dark .table tbody td::before {
+        color: #adb5bd;
+    }
+
+    body.dark .card {
+        border-color: #444;
+    }
+
+}
+
+/* =================================
+   SMALL PHONES
+================================= */
+
+@media (max-width: 380px) {
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .btn-group .btn {
+        font-size: 11px;
+    }
+
+    .card-footer .btn {
+        font-size: 10px;
+        padding: 5px 6px;
+    }
+
+}
+
+/* MOBILE SORT - HIDDEN ON DESKTOP */
+
+.mobile-sort {
+    display: none;
+}
+
+@media (max-width: 767.98px) {
+
+    .mobile-sort {
+        display: flex;
+        width: 100%;
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    .mobile-sort select {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .mobile-sort button {
+        width: 45px;
+    }
+
 }
