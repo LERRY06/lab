@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word регистър</title>
+  <script type="module" crossorigin src="./assets/wordRegister-zJ6bEeaC.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/storage-Di6C9KkX.js">
+  <link rel="stylesheet" crossorigin href="./assets/style-BftV0HNn.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1>Word регистър</h1>
+        <p class="subtitle">
+            Добавяне на записи в Word таблица
+        </p>
+
+        <form id="dataForm">
+            <label for="employeeSelect">Име *</label>
+            <select id="employeeSelect" required>
+                <option value="">-- Избери служител --</option>
+            </select>
+
+            <label for="companyNumber">Фирмен номер *</label>
+            <input type="text" id="companyNumber" readonly required>
+
+            <label for="employeePosition">Длъжност *</label>
+            <input type="text" id="employeePosition" readonly required>
+
+            <label for="trainingTopic">Тема на обучение *</label>
+            <select id="trainingTopic" required>
+                <option value="">-- Избери тема --</option>
+            </select>
+
+            <label for="trainingVersion">Версия *</label>
+            <select id="trainingVersion" required>
+                <option value="">-- Избери версия --</option>
+            </select>
+
+            <label for="trainingType">Вид обучение *</label>
+            <select id="trainingType" required>
+                <option value="">-- Избери вид обучение --</option>
+            </select>
+
+            <label for="date">Дата *</label>
+            <input type="date" id="date" required>
+
+            <hr>
+
+            <h2>Word документ</h2>
+
+            <label class="choice">
+                <input type="radio" name="mode" value="new" checked>
+                Създай нов документ
+            </label>
+
+            <label class="choice">
+                <input type="radio" name="mode" value="existing">
+                Добави ред към съществуващ документ
+            </label>
+
+            <label for="wordFile">Избери съществуващ .docx файл</label>
+            <input type="file" id="wordFile" accept=".docx" disabled>
+
+            <button type="submit" id="saveButton">
+                Създай Word документ
+            </button>
+
+            <button type="button" id="backButton">
+                Назад към началното меню
+            </button>
+        </form>
+
+        <p id="status" role="status" aria-live="polite"></p>
+    </main>
+
+</body>
+
+</html>

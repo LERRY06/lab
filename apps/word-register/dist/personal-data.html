@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Данни за служител</title>
+  <script type="module" crossorigin src="./assets/personalData-Bw0IRail.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/storage-Di6C9KkX.js">
+  <link rel="stylesheet" crossorigin href="./assets/style-BftV0HNn.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1>Данни за служител</h1>
+
+        <p class="subtitle">
+            Добавяй, редактирай и изтривай служители.
+        </p>
+
+        <form id="employeeForm">
+            <label for="firstName">Първо име *</label>
+            <input type="text" id="firstName" required>
+
+            <label for="middleName">Презиме *</label>
+            <input type="text" id="middleName" required>
+
+            <label for="lastName">Фамилия *</label>
+            <input type="text" id="lastName" required>
+
+            <label for="companyNumber">Фирмен номер *</label>
+            <input type="text" id="companyNumber" required>
+
+            <label for="position">Длъжност *</label>
+            <input type="text" id="position" required>
+
+            <button type="submit" id="saveEmployeeButton">
+                Добави служител
+            </button>
+
+            <button type="button" id="cancelEditButton" hidden>
+                Откажи редактирането
+            </button>
+        </form>
+
+        <hr>
+
+        <h2>Записани служители</h2>
+
+        <div id="employeeList"></div>
+
+        <button type="button" id="backButton">
+            Назад към началното меню
+        </button>
+
+        <p id="status" role="status" aria-live="polite"></p>
+    </main>
+
+</body>
+
+</html>

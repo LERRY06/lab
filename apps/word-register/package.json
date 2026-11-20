@@ -1,0 +1,25 @@
+{
+  "name": "word-register",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "docx": "^9.11.0",
+    "docxtemplater": "^3.71.0",
+    "pizzip": "^3.3.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.4"
+  }
+}
