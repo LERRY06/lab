@@ -1,0 +1,90 @@
+body {
+    background:#e9ecef;
+    transition:0.3s;
+}
+
+/* DARK MODE */
+body.dark {
+    background:#121212;
+    color:#e0e0e0;
+}
+
+body.dark .card {
+    background:#1e1e1e;
+    color:#e0e0e0;
+}
+
+body.dark .table {
+    color:#e0e0e0;
+}
+
+body.dark .form-control,
+body.dark .input-group-text {
+    background:#2a2a2a;
+    color:#fff;
+    border:1px solid #444;
+}
+
+/* =========================
+   ONLY 3 ROW COLORS
+========================= */
+.row-success { background:#d4edda !important; }
+.row-warning { background:#fff3cd !important; }
+.row-danger  { background:#f8d7da !important; }
+
+/* DARK MODE ROW COLORS */
+body.dark .row-success { background:#1f3d2b !important; }
+body.dark .row-warning { background:#4a3b1a !important; }
+body.dark .row-danger  { background:#4a1f1f !important; }
+
+body.dark .row-success td,
+body.dark .row-warning td,
+body.dark .row-danger td {
+    color:#fff !important;
+}
+
+/* clean table */
+.table tbody tr {
+    background: transparent;
+}
+
+th.sortable {
+    cursor:pointer;
+    user-select:none;
+}
+
+.done {
+    opacity:0.6;
+}
+
+.sort-icon {
+    margin-left: 5px;
+    font-size: 0.8em;
+    opacity: 0.6;
+}
+
+th.active-sort .sort-icon {
+    opacity: 1;
+    font-weight: bold;
+}
+
+#pageNumbers button {
+  margin: 0 2px;
+}
+
+#pageNumbers .active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.editing-title {
+  border: 1px dashed #007bff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
