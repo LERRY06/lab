@@ -482,3 +482,55 @@ body {
         width: 100%;
     }
 }
+
+
+/* MAIN CONTENT LAYOUT */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* IFRAME CONTAINER */
+.iframe-container {
+    flex: 1;
+    min-height: 0;
+}
+
+/* GLOBAL FOOTER */
+.main-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: #ffffff;
+    border-top: 1px solid #e4e8f0;
+    color: #6c757d;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-divider {
+    color: #ced4da;
+}
+
+/* RESPONSIVE */
+@media (max-width: 576px) {
+    .main-footer {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .footer-right {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
