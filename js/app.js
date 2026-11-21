@@ -87,3 +87,75 @@ searchInput.addEventListener("input", () => {
     });
 
 });
+
+
+// =====================================
+// URL ROUTING FOR IFRAME APPLICATIONS
+// =====================================
+
+const contentFrame = document.getElementById('contentFrame');
+
+const routeMap = {
+    '/dashboard': 'pages/dashboard.html',
+    '/tasks': 'apps/to-do-list/index.html',
+    '/excel-to-word': 'apps/excel-to-word/index.html',
+    '/employees': 'apps/word-register/dist/personal-data.html',
+    '/add-employee': 'apps/word-register/dist/personal-data.html',
+    '/educations': 'apps/word-register/dist/additional-data.html',
+    '/training-type': 'apps/word-register/dist/training-type.html',
+    '/word-register': 'apps/word-register/dist/index.html',
+    '/bulls-and-cows': 'apps/bulls-and-cows/index.html'
+};
+
+// Зареждане на приложение
+function loadRoute(route, updateHistory = true) {
+
+    const file = routeMap[route];
+
+    if (!file) return;
+
+    contentFrame.src = file;
+
+    if (updateHistory) {
+        history.pushState({ route }, '', route);
+    }
+
+    // Активно меню
+    document.querySelectorAll('[data-route]').forEach(link => {
+        link.classList.toggle(
+            'active',
+            link.dataset.route === route
+        );
+    });
+}
+
+// Клик върху меню
+document.querySelectorAll('[data-route]').forEach(link => {
+
+    link.addEventListener('click', function(event) {
+
+        event.preventDefault();
+
+        const route = this.dataset.route;
+
+        loadRoute(route);
+
+    });
+
+});
+
+// Back / Forward в браузъра
+window.addEventListener('popstate', function() {
+
+    const route = location.pathname;
+
+    loadRoute(route, false);
+
+});
+
+// Директно отваряне на URL
+const initialRoute = routeMap[location.pathname]
+    ? location.pathname
+    : '/dashboard';
+
+loadRoute(initialRoute, false);
