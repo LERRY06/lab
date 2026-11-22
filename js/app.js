@@ -99,12 +99,12 @@ const routeMap = {
     '/dashboard': 'pages/dashboard.html',
     '/tasks': 'apps/to-do-list/index.html',
     '/excel-to-word': 'apps/excel-to-word/index.html',
-    '/employees': 'apps/word-register/dist/personal-data.html',
-    '/add-employee': 'apps/word-register/dist/personal-data.html',
+    '/employees': 'apps/word-register/dist/employees.html',
+    '/add-employee': 'apps/word-register/dist/add-employee.html',
     '/educations': 'apps/word-register/dist/additional-data.html',
     '/training-type': 'apps/word-register/dist/training-type.html',
-    '/word-register': 'apps/word-register/dist/index.html',
-    '/bulls-and-cows': 'apps/bulls-and-cows/index.html'
+    '/word-register': 'apps/word-register/dist/word-register.html',
+    '/bulls-and-cows': 'apps/bulls-and-cows/index.html',
 };
 
 // Зареждане на приложение

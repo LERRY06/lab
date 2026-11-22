@@ -8,7 +8,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, "index.html"),
-        personalData: resolve(__dirname, "personal-data.html"),
+        employees: resolve(__dirname, "employees.html"),
+        addEmployee: resolve(__dirname, "add-employee.html"),
         additionalData: resolve(__dirname, "additional-data.html"),
         trainingType: resolve(__dirname, "training-type.html"),
         wordRegister: resolve(__dirname, "word-register.html"),

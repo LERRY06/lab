@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="bg">
 
@@ -5,17 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Данни за служител</title>
-  <script type="module" crossorigin src="./assets/personalData-Bw0IRail.js"></script>
+  <script type="module" crossorigin src="./assets/addEmployee-BkE4s72Q.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/storage-Di6C9KkX.js">
   <link rel="stylesheet" crossorigin href="./assets/style-BftV0HNn.css">
 </head>
 
 <body>
     <main class="container">
-        <h1>Данни за служител</h1>
+        <h1 id="pageTitle">Добавяне на служител</h1>
 
         <p class="subtitle">
-            Добавяй, редактирай и изтривай служители.
+            Въведете данните на служителя.
         </p>
 
         <form id="employeeForm">
@@ -43,14 +44,8 @@
             </button>
         </form>
 
-        <hr>
-
-        <h2>Записани служители</h2>
-
-        <div id="employeeList"></div>
-
         <button type="button" id="backButton">
-            Назад към началното меню
+            Назад към списъка
         </button>
 
         <p id="status" role="status" aria-live="polite"></p>

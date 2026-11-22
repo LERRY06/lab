@@ -1,7 +1,6 @@
 import { getData, saveData } from "./storage.js";
 
 const form = document.getElementById("trainingForm");
-const backButton = document.getElementById("backButton");
 
 const topicField = document.getElementById("trainingTopic");
 const versionField = document.getElementById("trainingVersion");
@@ -51,9 +50,5 @@ form.addEventListener("submit", (event) => {
         trainingVersion: version
     });
 
-    window.location.href = "./index.html";
-});
-
-backButton.addEventListener("click", () => {
     window.location.href = "./index.html";
 });

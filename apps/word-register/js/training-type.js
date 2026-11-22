@@ -1,7 +1,6 @@
 import { getData, saveData } from "./storage.js";
 
 const form = document.getElementById("trainingTypeForm");
-const backButton = document.getElementById("backButton");
 const field = document.getElementById("trainingType");
 
 // Списък с всички видове обучения.
@@ -38,10 +37,5 @@ form.addEventListener("submit", (event) => {
         trainingType
     });
 
-    window.location.href = "./index.html";
-});
-
-// Връщане към началното меню.
-backButton.addEventListener("click", () => {
     window.location.href = "./index.html";
 });
