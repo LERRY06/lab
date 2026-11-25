@@ -1,0 +1,753 @@
+
+/* =========================================
+   LAB - COMMON APPLICATION STYLES
+   VERSION 1.0
+========================================= */
+
+
+/* =========================================
+   1. GLOBAL VARIABLES
+========================================= */
+
+:root {
+
+    /* COLORS */
+
+    --app-primary: #2563eb;
+    --app-primary-hover: #1d4ed8;
+
+    --app-warning: #ffc107;
+    --app-warning-hover: #e0a800;
+
+    --app-secondary: #6c757d;
+    --app-secondary-hover: #5a6268;
+
+    --app-danger: #dc3545;
+    --app-danger-hover: #bd2130;
+
+    --app-success: #166534;
+    --app-error: #991b1b;
+
+    /* TEXT */
+
+    --app-text: #1e293b;
+    --app-text-muted: #64748b;
+
+    /* BACKGROUNDS */
+
+    --app-background: #f1f5f9;
+    --app-surface: #ffffff;
+
+    --app-success-bg: #dcfce7;
+    --app-error-bg: #fee2e2;
+    --app-warning-bg: #fef3c7;
+    --app-info-bg: #dbeafe;
+
+    /* BORDERS */
+
+    --app-border: #cbd5e1;
+    --app-border-light: #e2e8f0;
+
+    /* RADIUS */
+
+    --app-radius: 7px;
+    --app-radius-container: 14px;
+
+    /* SHADOW */
+
+    --app-shadow: 0 4px 18px rgba(0,0,0,0.06);
+
+    /* SPACING */
+
+    --app-spacing: 20px;
+
+    /* FONT */
+
+    --app-font: Arial, sans-serif;
+}
+
+
+/* =========================================
+   2. GLOBAL RESET
+========================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 20px 12px;
+
+    font-family: var(--app-font);
+    color: var(--app-text);
+
+    background: var(--app-background);
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   3. MAIN CONTAINER
+========================================= */
+
+.container,
+.app-container {
+
+    width: 100%;
+    max-width: 760px;
+
+    margin: 0 auto;
+    padding: 24px;
+
+    background: var(--app-surface);
+
+    border-radius: var(--app-radius-container);
+    box-shadow: var(--app-shadow);
+}
+
+
+/* =========================================
+   4. HEADINGS
+========================================= */
+
+h1 {
+    margin: 0;
+
+    color: var(--app-primary);
+    font-size: 25px;
+}
+
+h2 {
+    margin-bottom: 18px;
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 17px;
+}
+
+.subtitle,
+.app-subtitle {
+    margin: 7px 0 0;
+
+    color: var(--app-text-muted);
+    font-size: 14px;
+}
+
+.page-header,
+.app-page-header {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   5. FORMS
+========================================= */
+
+label {
+    display: block;
+
+    margin: 16px 0 7px;
+
+    font-weight: 700;
+}
+
+input,
+select,
+textarea {
+
+    display: block;
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid var(--app-border);
+    border-radius: var(--app-radius);
+
+    font-family: var(--app-font);
+    font-size: 16px;
+
+    color: var(--app-text);
+    background: var(--app-surface);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    outline: 2px solid #93c5fd;
+    outline-offset: 1px;
+
+    border-color: var(--app-primary);
+}
+
+select {
+    cursor: pointer;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   6. BUTTON SYSTEM
+========================================= */
+
+button,
+.app-btn {
+
+    padding: 10px 14px;
+
+    border: none;
+    border-radius: var(--app-radius);
+
+    background: var(--app-primary);
+    color: #fff;
+
+    font-family: var(--app-font);
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s;
+}
+
+button:hover,
+.app-btn:hover {
+    background: var(--app-primary-hover);
+}
+
+button:disabled,
+.app-btn:disabled {
+
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* PRIMARY */
+
+.app-btn--primary {
+    background: var(--app-primary);
+    color: #fff;
+}
+
+.app-btn--primary:hover {
+    background: var(--app-primary-hover);
+}
+
+
+/* WARNING */
+
+.app-btn--warning {
+    background: var(--app-warning);
+    color: #212529;
+}
+
+.app-btn--warning:hover {
+    background: var(--app-warning-hover);
+}
+
+
+/* SECONDARY */
+
+.app-btn--secondary {
+    background: var(--app-secondary);
+    color: #fff;
+}
+
+.app-btn--secondary:hover {
+    background: var(--app-secondary-hover);
+}
+
+
+/* DANGER */
+
+.app-btn--danger {
+    background: var(--app-danger);
+    color: #fff;
+}
+
+.app-btn--danger:hover {
+    background: var(--app-danger-hover);
+}
+
+
+/* =========================================
+   7. BUTTON GROUPS
+========================================= */
+
+.app-button-group {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+.app-button-group button {
+    margin: 0;
+}
+
+.app-btn-standalone {
+    display: block;
+    margin-top: 20px;
+}
+
+form > button {
+    margin-top: 24px;
+}
+
+
+/* =========================================
+   8. STATUS MESSAGES
+========================================= */
+
+/* Legacy status */
+
+#status,
+.app-status {
+
+    margin-top: 15px;
+
+    color: var(--app-success);
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* General message */
+
+.app-message {
+
+    margin-top: 15px;
+    padding: 12px;
+
+    border-radius: var(--app-radius);
+
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+
+/* SUCCESS */
+
+.app-message--success {
+    background: var(--app-success-bg);
+    color: var(--app-success);
+}
+
+
+/* ERROR */
+
+.app-message--error {
+    background: var(--app-error-bg);
+    color: var(--app-error);
+}
+
+
+/* WARNING */
+
+.app-message--warning {
+    background: var(--app-warning-bg);
+    color: #92400e;
+}
+
+
+/* INFO */
+
+.app-message--info {
+    background: var(--app-info-bg);
+    color: #1e40af;
+}
+
+
+/* =========================================
+   9. SEPARATORS
+========================================= */
+
+hr {
+
+    margin: 24px 0;
+
+    border: none;
+    border-top: 1px solid var(--app-border-light);
+}
+
+
+/* =========================================
+   10. RADIO / CHECKBOX GROUPS
+========================================= */
+
+.choice,
+.app-choice {
+
+    display: flex;
+
+    align-items: center;
+    gap: 10px;
+
+    margin: 12px 0;
+
+    font-weight: 400;
+}
+
+.choice input,
+.app-choice input {
+
+    width: auto;
+    margin: 0;
+}
+
+
+/* =========================================
+   11. ACCESSIBILITY
+========================================= */
+
+button:focus-visible,
+.app-btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+
+/* =========================================
+   12. MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .container,
+    .app-container {
+
+        padding: 16px 12px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .app-button-group {
+        gap: 8px;
+    }
+
+}
+
+
+/* =========================================
+   13. SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .app-button-group button {
+
+        font-size: 12px;
+        padding: 9px 8px;
+    }
+
+}
+
+
+/* =========================================
+   14. REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* =========================================
+   END OF COMMON STYLES
+========================================= */
+
+/* READONLY FIELDS */
+
+input:read-only,
+textarea:read-only {
+    background: #f8fafc;
+    color: var(--app-text-muted);
+    cursor: default;
+}
+
+/* FILE STATUS */
+
+.app-file-status {
+    margin-top: 18px;
+    font-size: 12px;
+    color: var(--app-text-muted);
+    overflow-wrap: anywhere;
+}
+
+/* WIDE APPLICATION CONTAINER */
+
+.app-container-wide {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 25px;
+}
+
+/* APP MESSAGES */
+
+.app-message {
+    margin-top: 15px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.app-message--success {
+    color: #166534;
+}
+
+.app-message--error {
+    color: #dc2626;
+}
+
+.app-message--info {
+    color: #2563eb;
+}
+
+
+/* =========================================
+   15. EXCEL TO WORD - REUSABLE COMPONENTS
+   Added without modifying existing styles
+========================================= */
+
+
+/* =========================================
+   WELCOME SECTION
+========================================= */
+
+.app-welcome {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.app-welcome h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.app-welcome p {
+    color: var(--app-text-muted);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   UPLOAD GRID
+========================================= */
+
+.app-upload-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+
+/* =========================================
+   UPLOAD CARDS
+========================================= */
+
+.app-upload-card {
+    background: var(--app-surface);
+    border: 1px solid var(--app-border-light);
+    border-radius: 16px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+}
+
+.app-upload-card h3 {
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.app-upload-card > p {
+    color: var(--app-text-muted);
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+
+/* =========================================
+   FILE ICONS
+========================================= */
+
+.app-file-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    border-radius: 14px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.app-file-icon--excel {
+    background: #e1f4e9;
+    color: #16834a;
+}
+
+.app-file-icon--word {
+    background: #e4edff;
+    color: #2860c8;
+}
+
+
+/* =========================================
+   UPLOAD BUTTON
+========================================= */
+
+.app-upload-button {
+    background: var(--app-primary);
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.app-upload-button:hover:not(:disabled) {
+    background: var(--app-primary-hover);
+}
+
+
+/* =========================================
+   GENERATE SECTION
+========================================= */
+
+.app-generate-section {
+    background: var(--app-surface);
+    border-radius: 16px;
+    margin-top: 30px;
+    padding: 28px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    border: 1px solid var(--app-border-light);
+}
+
+.app-generate-info h3 {
+    margin-bottom: 8px;
+}
+
+.app-generate-info p {
+    color: var(--app-text-muted);
+    font-size: 13px;
+}
+
+
+/* =========================================
+   GENERATE BUTTON
+========================================= */
+
+.app-generate-button {
+    background: #16a05a;
+    color: #fff;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.app-generate-button:hover:not(:disabled) {
+    background: #12834a;
+}
+
+.app-generate-button:disabled {
+    background: #b8c1cc;
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.app-upload-message {
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   EXCEL TO WORD - MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .app-upload-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .app-generate-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .app-welcome h2 {
+        font-size: 24px;
+    }
+
+}
+
+/* GLOBAL FONT INHERITANCE */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}

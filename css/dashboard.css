@@ -1,0 +1,329 @@
+
+/* =========================================
+   LAB - DASHBOARD SPECIFIC STYLES
+   VERSION 2.1
+   Based on app-common.css
+========================================= */
+
+
+/* =========================================
+   1. DASHBOARD CONTAINER
+========================================= */
+
+.dashboard-container {
+
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   2. DASHBOARD SECTIONS
+========================================= */
+
+.dashboard-section {
+
+    margin-bottom: 30px;
+}
+
+.dashboard-section:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   3. SECTION TITLES
+========================================= */
+
+.dashboard-title {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0 0 16px;
+    padding-bottom: 11px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    color: var(--app-text);
+
+    border-bottom: 1px solid var(--app-border-light);
+}
+
+.dashboard-title i {
+    color: var(--app-primary);
+}
+
+
+/* =========================================
+   4. DASHBOARD GRID
+========================================= */
+
+.dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   5. DASHBOARD CARDS
+========================================= */
+
+.dashboard-card {
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    min-width: 0;
+    min-height: 115px;
+
+    padding: 22px;
+
+    background: var(--app-surface);
+
+    border: 1px solid var(--app-border-light);
+    border-radius: var(--app-radius-container);
+
+    color: var(--app-text);
+    text-decoration: none;
+
+    box-shadow: var(--app-shadow);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* HOVER */
+
+.dashboard-card:hover {
+
+    transform: translateY(-3px);
+
+    border-color: var(--app-primary);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* KEYBOARD FOCUS */
+
+.dashboard-card:focus-visible {
+
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   6. DASHBOARD ICONS
+========================================= */
+
+.dashboard-icon {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: var(--app-radius-container);
+
+    font-size: 25px;
+}
+
+
+/* BLUE */
+
+.dashboard-icon--blue {
+    background: var(--app-info-bg);
+    color: var(--app-primary);
+}
+
+
+/* GREEN */
+
+.dashboard-icon--green {
+    background: var(--app-success-bg);
+    color: var(--app-success);
+}
+
+
+/* ORANGE */
+
+.dashboard-icon--orange {
+    background: var(--app-warning-bg);
+    color: #92400e;
+}
+
+
+/* PURPLE */
+
+.dashboard-icon--purple {
+    background: #f0eaff;
+    color: #7952cc;
+}
+
+
+/* =========================================
+   7. CARD CONTENT
+========================================= */
+
+.dashboard-content {
+
+    flex: 1;
+    min-width: 0;
+}
+
+.dashboard-content h3 {
+
+    margin: 0 0 7px;
+
+    color: var(--app-text);
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.dashboard-content p {
+
+    margin: 0;
+
+    color: var(--app-text-muted);
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   8. CARD ARROW
+========================================= */
+
+.dashboard-arrow {
+
+    flex-shrink: 0;
+
+    color: var(--app-text-muted);
+
+    font-size: 15px;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.dashboard-card:hover .dashboard-arrow {
+
+    color: var(--app-primary);
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   9. TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+}
+
+
+/* =========================================
+   10. MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .dashboard-section {
+        margin-bottom: 25px;
+    }
+
+    .dashboard-card {
+        min-height: 95px;
+        padding: 16px;
+        gap: 13px;
+    }
+
+    .dashboard-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 21px;
+    }
+
+    .dashboard-content h3 {
+        font-size: 15px;
+    }
+
+    .dashboard-content p {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================
+   11. SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .dashboard-card {
+        padding: 13px;
+        gap: 10px;
+    }
+
+    .dashboard-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 19px;
+    }
+
+    .dashboard-content h3 {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================
+   12. REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .dashboard-card,
+    .dashboard-arrow {
+        transition: none;
+    }
+
+    .dashboard-card:hover {
+        transform: none;
+    }
+
+}

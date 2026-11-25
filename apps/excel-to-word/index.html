@@ -5,18 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel to Word Generator</title>
+    <link rel="stylesheet" href="../../css/app-common.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="app-container">
+    <div class="app-container-wide">
 
         <main class="main-content">
 
-            <section class="welcome">
-                <h2>Създай своя документ</h2>
-                <p>Прикачи Excel файл и Word шаблон, за да генерираш готов документ.</p>
-            </section>
+            <header class="page-header">
+    <h1>Създай своя документ</h1>
+    <p class="app-subtitle">
+        Прикачи Excel файл и Word шаблон, за да генерираш готов документ.
+    </p>
+</header>
 
             <section class="upload-grid">
 
@@ -26,14 +29,14 @@
                     <p>Избери файл с данни (.xlsx, .xls)</p>
 
                     <input type="file" id="excelFile"
-                           accept=".xlsx,.xls" hidden>
+                           accept=".xlsx,.xls" style="display:none;"">
 
                     <button class="upload-button"
                             onclick="document.getElementById('excelFile').click()">
                         Избери Excel файл
                     </button>
 
-                    <p class="file-status" id="excelStatus">
+                    <p class="app-file-status" id="excelStatus">
                         Няма избран файл
                     </p>
                 </div>
@@ -44,14 +47,14 @@
                     <p>Избери шаблон (.docx)</p>
 
                     <input type="file" id="wordFile"
-                           accept=".docx" hidden>
+                           accept=".docx" style="display:none;">
 
                     <button class="upload-button"
                             onclick="document.getElementById('wordFile').click()">
                         Избери Word шаблон
                     </button>
 
-                    <p class="file-status" id="wordStatus">
+                    <p class="app-file-status" id="wordStatus">
                         Няма избран файл
                     </p>
                 </div>
@@ -68,7 +71,10 @@
                     Генерирай Word документ
                 </button>
 
-                <p id="message"></p>
+                <p id="message"
+   class="app-message"
+   role="status"
+   aria-live="polite"></p>
             </section>
 
         </main>

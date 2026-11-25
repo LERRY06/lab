@@ -1,258 +1,151 @@
 
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>Dashboard - Lab</title>
 
+    <!-- COMMON APPLICATION STYLES -->
+    <link rel="stylesheet" href="../css/app-common.css">
+
+    <!-- DASHBOARD SPECIFIC STYLES -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <!-- FONT AWESOME -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
-            color: #343a40;
-            padding: 25px;
-        }
-
-        .dashboard-section {
-            margin-bottom: 30px;
-        }
-
-        .section-title {
-            font-size: 17px;
-            font-weight: 600;
-            color: #344054;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e1e5eb;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 18px;
-}
-
-        .card {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 25px;
-            min-height: 115px;
-            background: #fff;
-            border: 1px solid #e9edf2;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #344054;
-            box-shadow: 0 2px 7px rgba(0,0,0,.04);
-            transition: all .2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            border-color: #0d6efd;
-            box-shadow: 0 5px 15px rgba(0,0,0,.08);
-        }
-
-        .card-icon {
-            width: 58px;
-            height: 58px;
-            min-width: 58px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            font-size: 25px;
-        }
-
-        .blue {
-            background: #e7f1ff;
-            color: #0d6efd;
-        }
-
-        .green {
-            background: #e5f8ee;
-            color: #198754;
-        }
-
-        .orange {
-            background: #fff2df;
-            color: #fd9843;
-        }
-
-        .purple {
-            background: #f0eaff;
-            color: #7952cc;
-        }
-
-        .card-content {
-            flex: 1;
-        }
-
-        .card-content h3 {
-            font-size: 16px;
-            margin-bottom: 7px;
-        }
-
-        .card-content p {
-            font-size: 13px;
-            color: #8793a1;
-            line-height: 1.5;
-        }
-
-        .card-arrow {
-            color: #aab2bd;
-            font-size: 16px;
-        }
-
-        /* Responsive */
-
-        /* Tablet */
-@media (max-width: 1000px) {
-    .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-/* Mobile */
-@media (max-width: 600px) {
-            body {
-                padding: 15px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .card {
-                padding: 18px;
-                min-height: 95px;
-            }
-
-            .card-icon {
-                width: 48px;
-                height: 48px;
-                min-width: 48px;
-                font-size: 21px;
-            }
-        }
-
-    </style>
 </head>
 
 <body>
 
-    <!-- MAIN MENU - ROW 1 -->
+<div class="dashboard-container">
+
+
+    <!-- MAIN MENU -->
+
     <section class="dashboard-section">
 
-        <h2 class="section-title">
-            <i class="fa-solid fa-bars"></i> Main Menu
+        <h2 class="dashboard-title">
+            <i class="fa-solid fa-bars"></i>
+            Main Menu
         </h2>
 
-        <div class="cards">
+        <div class="dashboard-grid">
 
             <a href="../apps/to-do-list/index.html"
-               target="contentFrame" class="card">
+               target="contentFrame"
+               class="dashboard-card">
 
-                <div class="card-icon blue">
+                <div class="dashboard-icon dashboard-icon--blue">
                     <i class="fa-solid fa-list-check"></i>
                 </div>
 
-                <div class="card-content">
+                <div class="dashboard-content">
                     <h3>Tasks</h3>
                     <p>Task and activity management</p>
                 </div>
 
-                <i class="fa-solid fa-chevron-right card-arrow"></i>
+                <i class="fa-solid fa-chevron-right dashboard-arrow"></i>
 
             </a>
 
         </div>
+
     </section>
 
 
-    <!-- MAIN MENU - ROW 2 -->
+    <!-- DOCUMENT MANAGEMENT -->
+
     <section class="dashboard-section">
 
-        <h2 class="section-title">
-            <i class="fa-solid fa-bars"></i> Main Menu
+        <h2 class="dashboard-title">
+            <i class="fa-solid fa-folder-open"></i>
+            Document Management
         </h2>
 
-        <div class="cards">
+        <div class="dashboard-grid">
 
             <a href="../apps/excel-to-word/index.html"
-               target="contentFrame" class="card">
+               target="contentFrame"
+               class="dashboard-card">
 
-                <div class="card-icon green">
+                <div class="dashboard-icon dashboard-icon--green">
                     <i class="fa-solid fa-file-word"></i>
                 </div>
 
-                <div class="card-content">
+                <div class="dashboard-content">
                     <h3>Excel to Word</h3>
                     <p>Excel to Word document conversion</p>
                 </div>
 
-                <i class="fa-solid fa-chevron-right card-arrow"></i>
+                <i class="fa-solid fa-chevron-right dashboard-arrow"></i>
 
             </a>
 
 
-            <a href="../apps/word-register/dist/index.html"
-               target="contentFrame" class="card">
+            <a href="../apps/word-register/dist/word-register.html"
+               target="contentFrame"
+               class="dashboard-card">
 
-                <div class="card-icon purple">
+                <div class="dashboard-icon dashboard-icon--purple">
                     <i class="fa-solid fa-users"></i>
                 </div>
 
-                <div class="card-content">
+                <div class="dashboard-content">
                     <h3>Employee Files</h3>
                     <p>Employee records and personal files</p>
                 </div>
 
-                <i class="fa-solid fa-chevron-right card-arrow"></i>
+                <i class="fa-solid fa-chevron-right dashboard-arrow"></i>
 
             </a>
 
         </div>
+
     </section>
 
 
     <!-- CALCULATIONS -->
-    <section class="dashboard-section">
 
-        <h2 class="section-title">
-            <i class="fa-solid fa-calculator"></i> Calculations
+    <!-- <section class="dashboard-section">
+
+        <h2 class="dashboard-title">
+            <i class="fa-solid fa-calculator"></i>
+            Calculations
         </h2>
 
-        <div class="cards">
+        <div class="dashboard-grid">
 
             <a href="../apps/word-register/dist/index.html"
-               target="contentFrame" class="card">
+               target="contentFrame"
+               class="dashboard-card">
 
-                <div class="card-icon orange">
+                <div class="dashboard-icon dashboard-icon--orange">
                     <i class="fa-solid fa-pills"></i>
                 </div>
 
-                <div class="card-content">
+                <div class="dashboard-content">
                     <h3>Tablets</h3>
                     <p>Tablet calculations</p>
                 </div>
 
-                <i class="fa-solid fa-chevron-right card-arrow"></i>
+                <i class="fa-solid fa-chevron-right dashboard-arrow"></i>
 
             </a>
 
         </div>
-    </section>
+
+    </section> -->
+
+
+</div>
 
 </body>
 </html>

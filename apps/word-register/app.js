@@ -11,7 +11,11 @@ import {
 } from "docx";
 
 import PizZip from "pizzip";
-import { getData } from "./js/storage.js";
+import {
+    getData,
+    getTrainingTopics,
+    getTrainingVersions
+} from "./js/storage.js";
 
 const form = document.getElementById("dataForm");
 const status = document.getElementById("status");
@@ -78,19 +82,12 @@ function updateEmployeeFields() {
     employeePositionField.value = employee?.position || "";
 }
 
+
 function loadTrainingData() {
     const data = getData();
 
     const trainingTypes = Array.isArray(data.trainingTypes)
         ? data.trainingTypes
-        : [];
-
-    const trainingTopics = Array.isArray(data.trainingTopics)
-        ? data.trainingTopics
-        : [];
-
-    const trainingVersions = Array.isArray(data.trainingVersions)
-        ? data.trainingVersions
         : [];
 
     fillSelect(
@@ -99,18 +96,46 @@ function loadTrainingData() {
         "-- Избери вид обучение --"
     );
 
+    // Зареждаме всички теми.
+    const trainingTopics = getTrainingTopics();
+
     fillSelect(
         trainingTopicSelect,
         trainingTopics,
         "-- Избери тема --"
     );
 
+    // Първоначално няма избрана версия.
     fillSelect(
         trainingVersionSelect,
-        trainingVersions,
+        [],
         "-- Избери версия --"
     );
+
+    trainingVersionSelect.disabled = true;
 }
+
+// Зареждаме версиите само на избраната тема.
+function updateTrainingVersions() {
+    const selectedTopic = trainingTopicSelect.value;
+
+    const versions = getTrainingVersions(selectedTopic);
+
+    fillSelect(
+        trainingVersionSelect,
+        versions,
+        "-- Избери версия --"
+    );
+
+    trainingVersionSelect.disabled = !selectedTopic;
+}
+
+// При промяна на темата обновяваме версиите.
+trainingTopicSelect.addEventListener(
+    "change",
+    updateTrainingVersions
+);
+
 
 loadEmployeeData();
 loadTrainingData();
@@ -189,6 +214,19 @@ form.addEventListener("submit", async (event) => {
         status.textContent = "Моля, попълни всички задължителни полета.";
         return;
     }
+
+    // Проверяваме дали избраната версия принадлежи на избраната тема.
+const availableVersions = getTrainingVersions(
+    trainingTopicSelect.value
+);
+
+if (!availableVersions.includes(trainingVersionSelect.value)) {
+    status.textContent =
+        "Избраната версия не принадлежи на тази тема.";
+
+    trainingVersionSelect.focus();
+    return;
+}
 
     if (mode === "existing" && !wordFile.files[0]) {
         status.textContent = "Избери Word документ.";

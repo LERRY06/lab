@@ -5,10 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Данни за служител</title>
-  <script type="module" crossorigin src="./assets/addEmployee-BkE4s72Q.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/storage-Di6C9KkX.js">
-  <link rel="stylesheet" crossorigin href="./assets/style-BftV0HNn.css">
+    <title>Данни за служител</title>
+  <script type="module" crossorigin src="./assets/addEmployee-o2Ta6Myx.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/storage-d_PXdisb.js">
+  <link rel="stylesheet" crossorigin href="./assets/storage-CptH13_Z.css">
+  <link rel="stylesheet" crossorigin href="./assets/style-C9zc_aDv.css">
 </head>
 
 <body>
@@ -35,18 +36,29 @@
             <label for="position">Длъжност *</label>
             <input type="text" id="position" required>
 
-            <button type="submit" id="saveEmployeeButton">
-                Добави служител
-            </button>
+            <div class="app-button-group">
 
-            <button type="button" id="cancelEditButton" hidden>
-                Откажи редактирането
-            </button>
+    <button type="submit"
+            id="saveEmployeeButton"
+            class="app-btn app-btn--primary">
+        Добави служител
+    </button>
+
+    <button type="button"
+            id="cancelEditButton"
+            class="app-btn app-btn--warning"
+            hidden>
+        Откажи редактирането
+    </button>
+
+</div>
         </form>
 
-        <button type="button" id="backButton">
-            Назад към списъка
-        </button>
+        <button type="button"
+        id="backButton"
+        class="app-btn app-btn--secondary app-btn-standalone">
+    Назад към списъка
+</button>
 
         <p id="status" role="status" aria-live="polite"></p>
     </main>

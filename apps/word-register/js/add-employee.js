@@ -94,8 +94,8 @@ form.addEventListener("submit", event => {
     }
 
     const duplicate = employees.some(employee =>
-        employee.companyNumber.toLowerCase() ===
-            companyNumber.toLowerCase() &&
+        String(employee.companyNumber || "").trim().toLowerCase() ===
+    companyNumber.trim().toLowerCase() &&
         employee.companyNumber !== editingCompanyNumber
     );
 

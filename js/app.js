@@ -101,8 +101,10 @@ const routeMap = {
     '/excel-to-word': 'apps/excel-to-word/index.html',
     '/employees': 'apps/word-register/dist/employees.html',
     '/add-employee': 'apps/word-register/dist/add-employee.html',
-    '/educations': 'apps/word-register/dist/additional-data.html',
-    '/training-type': 'apps/word-register/dist/training-type.html',
+    '/educations': 'apps/word-register/dist/educations.html',
+    '/add-education': 'apps/word-register/dist/add-education.html',
+    '/education-types': 'apps/word-register/dist/education-types.html',
+    '/add-education-type': 'apps/word-register/dist/add-education-type.html',
     '/word-register': 'apps/word-register/dist/word-register.html',
     '/bulls-and-cows': 'apps/bulls-and-cows/index.html',
 };

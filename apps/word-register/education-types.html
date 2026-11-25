@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7fb">
+
+    <title>Видове обучения</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../../css/app-common.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main class="container">
+
+        <header class="page-header">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+
+                <div>
+                    <h1>Видове обучения</h1>
+                    <p class="subtitle">
+                        Списък със записаните видове обучения
+                    </p>
+                </div>
+
+                <a href="add-education-type.html"
+                   id="addEducationTypeButton"
+                   class="app-btn app-btn--primary"
+                   style="display: inline-block; text-decoration: none;">
+                    Добави вид обучение
+                </a>
+
+            </div>
+        </header>
+
+        <section id="educationTypeList"
+                 class="education-list"
+                 aria-label="Списък с видове обучения">
+        </section>
+
+        <p id="status" role="status" aria-live="polite"></p>
+
+    </main>
+
+    <script type="module" src="./js/education-types.js"></script>
+
+    
+<!-- DELETE EDUCATION TYPE MODAL -->
+<div id="deleteEducationTypeModal"
+     class="app-modal"
+     hidden>
+
+    <div class="app-modal-content"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="deleteEducationTypeTitle"
+         aria-describedby="deleteEducationTypeMessage">
+
+        <div class="modal-header">
+            <h2 id="deleteEducationTypeTitle">
+                Изтриване на вид обучение
+            </h2>
+        </div>
+
+        <div class="modal-body"
+             id="deleteEducationTypeMessage">
+            Сигурни ли сте, че искате да изтриете този вид обучение?
+        </div>
+
+        <div class="modal-footer">
+
+            <button type="button"
+                    id="cancelDeleteEducationType"
+                    class="app-btn app-btn--secondary">
+                Откажи
+            </button>
+
+            <button type="button"
+                    id="confirmDeleteEducationType"
+                    class="app-btn app-btn--danger">
+                Изтрий
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

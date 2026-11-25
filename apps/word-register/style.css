@@ -1,146 +1,352 @@
-* {
-    box-sizing: border-box;
-}
 
-body {
-    margin: 0;
-    padding: 30px 16px;
-    font-family: Arial, sans-serif;
-    background: #f1f5f9;
-    color: #1e293b;
-}
+/* =================================
+   EMPLOYEES - SPECIFIC STYLES
+   Общите стилове са в app-common.css
+================================= */
 
-.container {
-    max-width: 560px;
-    margin: 0 auto;
-    padding: 30px;
-    background: white;
-    border-radius: 14px;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-}
+/* EMPLOYEE LIST */
 
-h1 {
-    margin-top: 0;
-    color: #1d4ed8;
-}
-
-.subtitle {
-    color: #64748b;
-    margin-bottom: 28px;
-}
-
-label {
-    display: block;
-    margin: 16px 0 7px;
-    font-weight: bold;
-}
-
-input {
-    display: block;
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #cbd5e1;
-    border-radius: 7px;
-    font-size: 16px;
-}
-
-input:focus {
-    outline: 2px solid #93c5fd;
-    border-color: #2563eb;
-}
-
-/* Падащи менюта — същият стил като текстовите полета */
-select {
-    display: block;
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #cbd5e1;
-    border-radius: 7px;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #1e293b;
-    background-color: #fff;
-    cursor: pointer;
-}
-
-select:focus {
-    outline: 2px solid #93c5fd;
-    border-color: #2563eb;
-}
-
-select:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-button {
-    width: 100%;
-    margin-top: 24px;
-    padding: 13px;
-    border: none;
-    border-radius: 7px;
-    background: #2563eb;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #1d4ed8;
-}
-
-#status {
-    overflow-wrap: anywhere;
-    color: #166534;
-}
-
-hr {
-    margin: 28px 0;
-    border: none;
-    border-top: 1px solid #e2e8f0;
-}
-
-h2 {
-    font-size: 20px;
-    margin-bottom: 18px;
-}
-
-.choice {
+.employee-list {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: normal;
-    margin: 12px 0;
+    flex-direction: column;
+    gap: 9px;
 }
 
-.choice input {
-    width: auto;
-    margin: 0;
-}
-
-button:disabled {
-    opacity: 0.6;
-    cursor: wait;
-}
-
-#status {
-    overflow-wrap: anywhere;
-    line-height: 1.5;
-}
+/* EMPLOYEE CARD */
 
 .employee-card {
-    padding: 16px;
-    margin-bottom: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    padding: 13px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.employee-card:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
 }
 
 .employee-card h3 {
+    margin: 0 0 9px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* EMPLOYEE CONTENT */
+
+.employee-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.employee-details {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.employee-details span {
+    overflow-wrap: anywhere;
+}
+
+/* EMPLOYEE ACTIONS */
+
+.employee-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.employee-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+}
+
+.employee-btn.edit-btn {
+    color: #007bff;
+}
+
+.employee-btn.edit-btn:hover {
+    background: #e7f1ff;
+}
+
+.employee-btn.delete-btn {
+    color: #dc3545;
+}
+
+.employee-btn.delete-btn:hover {
+    background: #f8d7da;
+}
+
+.employee-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+
+
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* =================================
+   EDUCATIONS - SPECIFIC STYLES
+   Общите стилове са в app-common.css
+================================= */
+
+/* HEADER */
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+/* EDUCATION FORM */
+
+.education-form {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: var(--app-background);
+    border: 1px solid var(--app-border-light);
+    border-radius: var(--app-radius-container);
+}
+
+.education-form h2 {
     margin-top: 0;
 }
 
-.employee-card button {
-    margin-right: 8px;
-    margin-top: 8px;
+.education-form textarea {
+    min-height: 110px;
+}
+
+/* EDUCATION LIST */
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+/* EDUCATION CARD */
+
+.education-item {
+    padding: 13px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.education-item:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+}
+
+.education-item h3 {
+    margin: 0 0 9px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* EDUCATION CONTENT - ВТОРИ РЕД */
+
+.education-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+/* EDUCATION VERSIONS */
+
+/* VERSIONS */
+
+.education-versions {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* ACTIONS */
+
+.education-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* EMPTY LIST */
+
+.education-empty {
+    padding: 25px;
+    text-align: center;
+    color: var(--app-text-muted);
+    background: var(--app-background);
+    border-radius: var(--app-radius);
+}
+
+/* MOBILE */
+
+
+@media (max-width: 600px) {
+
+    .employee-card,
+    .education-item {
+        padding: 12px;
+    }
+
+    /* Служители */
+    .employee-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .employee-details {
+        flex: 1;
+        min-width: 0;
+        gap: 6px 10px;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .employee-actions {
+        display: flex;
+        flex-shrink: 0;
+        width: auto;
+        margin-top: 0;
+        gap: 6px;
+    }
+
+    /* Обучения */
+    .education-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .education-versions {
+        flex: 1;
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+    .education-actions {
+        display: flex;
+        flex-shrink: 0;
+        width: auto;
+        margin-top: 0;
+        gap: 6px;
+    }
+
+    /* Бутони */
+    .employee-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .employee-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+
+/* DELETE EMPLOYEE MODAL */
+
+.app-modal[hidden] {
+    display: none;
+}
+
+.app-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.app-modal-content {
+    width: 100%;
+    max-width: 420px;
+    padding: 22px;
+    background: var(--app-surface, #fff);
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+}
+
+.modal-header h2 {
+    margin: 0 0 16px;
+    font-size: 18px;
+    color: var(--app-text, #1e293b);
+}
+
+.modal-body {
+    margin-bottom: 24px;
+    color: var(--app-text-muted, #64748b);
+    line-height: 1.6;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.app-btn--danger {
+    background: #dc3545;
+    color: #fff;
+    border: 1px solid #dc3545;
+}
+
+.app-btn--danger:hover {
+    background: #bb2d3b;
+}
+
+@media (max-width: 400px) {
+    .app-modal-content {
+        padding: 18px;
+    }
 }

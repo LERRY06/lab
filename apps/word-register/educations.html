@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Обучения</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../../css/app-common.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main class="container">
+
+       <header class="page-header">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h1>Обучения</h1>
+            <p class="subtitle">Списък със записаните обучения</p>
+        </div>
+
+        
+<a href="add-education.html"
+   id="addEducationButton"
+   class="app-btn app-btn--primary"
+   style="display: inline-block; text-decoration: none;">
+    Добави обучение
+</a>
+
+    </div>
+</header>
+
+        <form id="educationForm" class="education-form" hidden>
+
+            <h2 id="formTitle">Добави обучение</h2>
+
+            <label for="educationName">Тема на обучение *</label>
+            <input type="text"
+                   id="educationName"
+                   required
+                   placeholder="Например: Excel">
+
+            <label for="educationVersions">Версии *</label>
+            <textarea id="educationVersions"
+                      required
+                      placeholder="Въведи версиите, всяка на нов ред"></textarea>
+
+            <div class="app-button-group">
+                <button type="submit"
+                        id="saveEducationButton"
+                        class="app-btn app-btn--primary">
+                    Запази
+                </button>
+
+                <button type="button"
+                        id="cancelEducationButton"
+                        class="app-btn app-btn--secondary">
+                    Откажи
+                </button>
+            </div>
+
+        </form>
+
+        <section id="educationList"
+                 class="education-list"
+                 aria-label="Списък с обучения">
+        </section>
+
+        <p id="status" role="status" aria-live="polite"></p>
+
+    </main>
+
+    <script type="module" src="./js/educations.js"></script>
+
+<!-- DELETE EDUCATION MODAL -->
+<div id="deleteEducationModal"
+     class="app-modal"
+     hidden>
+
+    <div class="app-modal-content"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="deleteEducationTitle"
+         aria-describedby="deleteEducationMessage">
+
+        <div class="modal-header">
+            <h2 id="deleteEducationTitle">
+                Изтриване на обучение
+            </h2>
+        </div>
+
+        <div class="modal-body"
+             id="deleteEducationMessage">
+            Сигурни ли сте, че искате да изтриете това обучение?
+        </div>
+
+        <div class="modal-footer">
+
+            <button type="button"
+                    id="cancelDeleteEducation"
+                    class="app-btn app-btn--secondary">
+                Откажи
+            </button>
+
+            <button type="button"
+                    id="confirmDeleteEducation"
+                    class="app-btn app-btn--danger">
+                Изтрий
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

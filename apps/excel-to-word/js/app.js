@@ -55,7 +55,7 @@ generateButton.addEventListener("click", async function () {
 
         generateButton.disabled = true;
         generateButton.textContent = "Генериране...";
-        message.textContent = "Обработване на файловете...";
+        showMessage("Обработване на файловете...", "info");
 
         // 1. Прочитане на Excel
         const excelData = await readExcelData(excelFile);
@@ -88,13 +88,13 @@ generateButton.addEventListener("click", async function () {
 
         URL.revokeObjectURL(downloadUrl);
 
-        message.textContent = "Документът е генериран успешно!";
+        showMessage("Документът е генериран успешно!", "success");
 
     } catch (error) {
 
         console.error(error);
 
-        message.textContent = "Грешка: " + error.message;
+        showMessage("Грешка: " + error.message, "error");
 
     } finally {
 
@@ -104,3 +104,8 @@ generateButton.addEventListener("click", async function () {
     }
 
 });
+
+function showMessage(text, type = "info") {
+    message.textContent = text;
+    message.className = `app-message app-message--${type}`;
+}
